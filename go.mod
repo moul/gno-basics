@@ -2,7 +2,10 @@ module github.com/moul/gno-hello-contract
 
 go 1.18
 
-require github.com/gnolang/gno v0.0.0-20220713073404-8543688cdabe
+require (
+	github.com/campoy/embedmd v1.0.0
+	github.com/gnolang/gno v0.0.0-20220713073404-8543688cdabe
+)
 
 require (
 	github.com/btcsuite/btcd/btcutil v1.1.1 // indirect
@@ -21,7 +24,6 @@ require (
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/flatbuffers v2.0.6+incompatible // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
-	github.com/jaekwon/testify v1.6.1 // indirect
 	github.com/jmhodges/levigo v1.0.0 // indirect
 	github.com/klauspost/compress v1.15.8 // indirect
 	github.com/libp2p/go-buffer-pool v0.0.2 // indirect

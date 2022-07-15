@@ -2,22 +2,10 @@ package hello
 
 import "testing"
 
-func TestRender(t *testing.T) {
-	{
-		got := Render("/")
-		expected := "1000"
-		if got != expected {
-			t.Fatalf("expected %q, got %q.", expected, got)
-		}
-	}
-
-	Inc()
-
-	{
-		got := Render("/")
-		expected := "1001"
-		if got != expected {
-			t.Fatalf("expected %q, got %q.", expected, got)
-		}
+func Test(t *testing.T) {
+	got := Hello()
+	expected := "Hello World!"
+	if got != expected {
+		t.Fatalf("expected %q, got %q.", expected, got)
 	}
 }
