@@ -5,9 +5,10 @@ GNO_HOME=${GNO_HOME:-~/.gno}
 GNO_CHAINID=${GNO_CHAINID:-dev}
 GNO_REMOTE=${GNO_REMOTE:-localhost:26657}
 GNO_PKGPATH=${GNO_PKGPATH:-`cat pkgpath.txt`}
+PUB_URL=`echo $GNO_PKGPATH | sed s@gno.land/@test2.gno.land/@`
 
 pre() {
-    echo "# [${GNO_PKGPATH}](https://${GNO_PKGPATH})" > README.md
+    echo "# [${GNO_PKGPATH}](https://${PUB_URL})" > README.md
     echo >> README.md
 }
 
@@ -29,6 +30,7 @@ call() {
         gnokey maketx call "${GNO_WALLET}" --gas-fee 1ugnot --broadcast true --chainid "${GNO_CHAINID}" --remote "${GNO_REMOTE}" --gas-wanted 500000 --home "${GNO_HOME=_HOME}" $@
     ) | tee -a README.md
     echo '```' >> README.md
+    echo >> README.md
 }
 
 #call 001-hello --pkgpath "gno.land/r/moul_basics_001" --func "Hello"
