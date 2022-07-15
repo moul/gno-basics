@@ -76,6 +76,8 @@ github.com/gnolang/gno v0.0.0-20220624121128-69d8846fc8ed h1:0aViQ3T88mwc2zmWZ19
 github.com/gnolang/gno v0.0.0-20220624121128-69d8846fc8ed/go.mod h1:QE2L+iLEpYIPKScg6UPanHZWbQQJ5bH7P2LyabVBO3g=
 github.com/gnolang/gno v0.0.0-20220624221705-26054ddeba79 h1:trD5hHiqLa5Wr4oOf3ctmXuZCeTJbKuIsX1o4HfXwSI=
 github.com/gnolang/gno v0.0.0-20220624221705-26054ddeba79/go.mod h1:Sk0l6+ZwnnBztD5lNpGeczeMmgh3qKaYJfLhrWdnc9M=
+github.com/gnolang/gno v0.0.0-20220713073404-8543688cdabe h1:1w8b4cMyJzC2nGYTj6cNqEmlnRKQ818HvXa9xagibGM=
+github.com/gnolang/gno v0.0.0-20220713073404-8543688cdabe/go.mod h1:Sk0l6+ZwnnBztD5lNpGeczeMmgh3qKaYJfLhrWdnc9M=
 github.com/gnolang/overflow v0.0.0-20170615021017-4d914c927216 h1:GKvsK3oLWG9B1GL7WP/VqwM6C92j5tIvB844oggL9Lk=
 github.com/gnolang/overflow v0.0.0-20170615021017-4d914c927216/go.mod h1:xJhtEL7ahjM1WJipt89gel8tHzfIl/LyMY+lCYh38d8=
 github.com/gogo/protobuf v1.3.2 h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=

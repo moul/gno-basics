@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
-	github.com/gnolang/gno v0.0.0-20220624221705-26054ddeba79
+	github.com/gnolang/gno v0.0.0-20220713073404-8543688cdabe
 	github.com/golang/glog v1.0.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
