@@ -16,12 +16,14 @@ call() {
 
 _call() {
     echo "foo@bar:~\$ gnokey maketx call \"MYWALLET\" --gas-fee 1ugnot --broadcast true --chainid \"${GNO_CHAINID}\" --remote \"${GNO_REMOTE}\" \\"
-    echo "> --gas-wanted 200000 $@"
-    gnokey maketx call "${GNO_WALLET}" --gas-fee 1ugnot --broadcast true --chainid "${GNO_CHAINID}" --remote "${GNO_REMOTE}" --gas-wanted 200000 --home "${GNO_HOME}" $@
+    echo "> --gas-wanted 500000 $@"
+    gnokey maketx call "${GNO_WALLET}" --gas-fee 1ugnot --broadcast true --chainid "${GNO_CHAINID}" --remote "${GNO_REMOTE}" --gas-wanted 500000 --home "${GNO_HOME}" $@
 }
 
 #call 001-hello --pkgpath "gno.land/r/moul_basics_001" --func "Hello"
 #call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Universe"
 #call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Multiverse"
-call 003-data --pkgpath "gno.land/r/moul_basics_003" --func "Add" --args "42"
-call 003-data --pkgpath "gno.land/r/moul_basics_003" --func "Add" --args "295"
+#call 003-data --pkgpath "gno.land/r/moul_basics_003" --func "Add" --args "42"
+#call 003-data --pkgpath "gno.land/r/moul_basics_003" --func "Add" --args "295"
+call 004-render --pkgpath "gno.land/r/moul_basics_004" --func "Render" --args "hello"
+call 004-render --pkgpath "gno.land/r/moul_basics_004" --func "Render" --args "foobar"
