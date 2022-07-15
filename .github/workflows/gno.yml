@@ -1,0 +1,56 @@
+name: Gno
+
+on:
+  pull_request:
+    paths:
+      - "**.go"
+      - "**.gno"
+      - "go.mod"
+      - "go.sum"
+      - ".github/workflows/gno.yml"
+      - "Makefile"
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  realm-tests:
+    name: Realm Tests
+    strategy:
+      fail-fast: false
+      matrix:
+        goversion: ["1.18.x"]
+        realm: ["hello"]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-go@v3
+        with:
+          go-version: ${{ matrix.go-version }}
+      - uses: actions/checkout@v3
+      - name: install gnodev
+        run: go install github.com/gnolang/gno/cmd/gnodev
+      - name: gnodev test
+        run: go run github.com/gnolang/gno/cmd/gnodev test ${{matrix.realm}}
+
+  realm-precompile-build:
+    name: "Realm Precompile & Build"
+    strategy:
+      fail-fast: false
+      matrix:
+        goversion: ["1.18.x"]
+        realm: ["hello"]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-go@v3
+        with:
+          go-version: ${{ matrix.go-version }}
+      - uses: actions/checkout@v3
+      - name: install gnodev
+        run: go install github.com/gnolang/gno/cmd/gnodev
+      - name: gnodev precompile
+        run: go run github.com/gnolang/gno/cmd/gnodev precompile ${{matrix.realm}}
+      - name: gnodev precompile
+        run: go run github.com/gnolang/gno/cmd/gnodev build ${{matrix.realm}}
