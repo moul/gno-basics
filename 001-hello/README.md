@@ -1,10 +1,12 @@
-[embedmd]:# (out.txt console)
+# [gno.land/r/moul_basics_hello_v1](https://gno.land/r/moul_basics_hello_v1)
+
 ```console
-foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657" \
-> --gas-wanted 200000 --pkgpath gno.land/r/moul_basics_001 --func Hello
-Enter password.
+foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657"  \
+> --gas-wanted 500000 --pkgpath gno.land/r/moul_basics_hello_v1 --func Hello
 ("Hello World!" string)
 OK!
-GAS WANTED: 200000
-GAS USED:   69242
+GAS WANTED: 500000
+GAS USED:   70660
 ```
+
+_generated with 'make integration'_

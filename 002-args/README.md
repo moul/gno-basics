@@ -1,17 +1,20 @@
-[embedmd]:# (out.txt console)
+# [gno.land/r/moul_basics_args_v1](https://gno.land/r/moul_basics_args_v1)
+
 ```console
-foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657" \
-> --gas-wanted 200000 --pkgpath gno.land/r/moul_basics_002 --func Hello --args Universe
-Enter password.
+foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657"  \
+> --gas-wanted 500000 --pkgpath gno.land/r/moul_basics_args_v1 --func Hello --args Universe
 ("Hello Universe!" string)
 OK!
-GAS WANTED: 200000
-GAS USED:   69546
-foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657" \
-> --gas-wanted 200000 --pkgpath gno.land/r/moul_basics_002 --func Hello --args Multiverse
-Enter password.
+GAS WANTED: 500000
+GAS USED:   69835
+```
+```console
+foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657"  \
+> --gas-wanted 500000 --pkgpath gno.land/r/moul_basics_args_v1 --func Hello --args Multiverse
 ("Hello Multiverse!" string)
 OK!
-GAS WANTED: 200000
-GAS USED:   69566
+GAS WANTED: 500000
+GAS USED:   69855
 ```
+
+_generated with 'make integration'_

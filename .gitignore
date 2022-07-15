@@ -1,3 +1,4 @@
 *.gno.gen.go
 *.gno.gen_test.go
 out.txt
+.tmp/
