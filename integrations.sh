@@ -20,4 +20,6 @@ _call() {
     gnokey maketx call "${GNO_WALLET}" --gas-fee 1ugnot --broadcast true --chainid "${GNO_CHAINID}" --remote "${GNO_REMOTE}" --gas-wanted 200000 --home "${GNO_HOME}" $@
 }
 
-call 001-hello --pkgpath "gno.land/r/moul_basics_001" --func "Hello"
+#call 001-hello --pkgpath "gno.land/r/moul_basics_001" --func "Hello"
+call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Universe"
+call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Multiverse"
