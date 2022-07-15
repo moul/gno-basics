@@ -1,32 +1,30 @@
 PUBLISHER_WALLET ?= moul
-PUBLISH_PATH ?= "gno.land/r/moul-hello"
 GNOKEY ?= go run github.com/gnolang/gno/cmd/gnokey
 GNODEV ?= go run github.com/gnolang/gno/cmd/gnodev
 GNO_HOME ?= ~/.gno
+GNO_CHAINID ?= dev
+GNO_REMOTE ?= localhost:26657
+GNO_ROOT ?= `go list -m -mod=mod -f "{{.Dir}}" github.com/gnolang/gno`
 
-all: test
-
-test:
-	$(GNODEV) test "./hello"
+all: precompile build test publish
 
 precompile:
-	$(GNODEV) precompile "./hello"
+	$(GNODEV) precompile "./" --verbose
 
 build: precompile
-	$(GNODEV) build "./hello"
+	$(GNODEV) build "./" --verbose
 
-publish-local:
-	$(GNOKEY) maketx addpkg "$(PUBLISHER_WALLET)" \
-		--pkgpath "$(PUBLISH_PATH)" \
-		--pkgdir "./hello" \
-		--deposit 100gnot \
-		--gas-fee 1gnot \
-		--gas-wanted 2000000 \
-		--broadcast true \
-		--remote localhost:26657 \
-		--chainid testchain \
-		--home $(GNO_HOME)
+test:
+	$(GNODEV) test "./" --verbose
 
+publish:
+	$(GNOKEY) maketx addpkg "$(PUBLISHER_WALLET)" --deposit 100ugnot --gas-fee 1ugnot --gas-wanted 2000000 --broadcast true --remote $(GNO_REMOTE) --chainid $(GNO_CHAINID) --home $(GNO_HOME) --pkgpath "gno.land/r/moul_basics_001" --pkgdir "./001-hello"
 
-publish-testnet:
-	@echo TODO
+#server: tidy
+#	cd "$(GNO_ROOT)" && go run ./cmd/gnoland
+
+#clean: tidy
+#	cd "$(GNO_ROOT)" && rm -rf testdir
+
+tidy:
+	go mod tidy
