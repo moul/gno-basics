@@ -10,12 +10,15 @@ deps:
 	@# done in the parent Makefile
 
 precompile: deps
+	@rm -rf .tmp/
 	gnodev precompile "./" --verbose
 
 build: deps precompile
+	@rm -rf .tmp/
 	gnodev build "./"
 
 test: deps
+	@rm -rf .tmp/
 	gnodev test "./" --verbose
 
 publish: deps
@@ -34,3 +37,6 @@ publish: deps
 
 integration: deps
 	GNO_HOME=$(GNO_HOME) GNO_WALLET=$(GNO_WALLET) GNO_CHAINID=$(GNO_CHAINID) GNO_REMOTE=$(GNO_REMOTE) GNO_PKG_PATH=$(GNO_PKG_PATH) ./integrations.sh
+
+clean:
+	rm -f $(wildcard *.gno.gen*) $(wildcard .*.gno.gen*)

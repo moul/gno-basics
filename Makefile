@@ -7,7 +7,7 @@ deps:
 	go install github.com/gnolang/gno/cmd/gnokey
 	go install github.com/gnolang/gno/cmd/gnodev
 
-precompile build test publish integration: deps
+precompile build test publish integration clean: deps
 	@for example in $(EXAMPLES); do \
 		( set -e; \
 			echo "+ cd $$example && make $@"; \
