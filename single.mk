@@ -2,6 +2,7 @@ GNO_WALLET ?= test1
 GNO_HOME ?= ~/.gno
 GNO_CHAINID ?= dev
 GNO_REMOTE ?= localhost:26657
+GNO_PKG_PATH ?= `cat pkgpath.txt`
 
 all: precompile build test publish integration
 
@@ -28,8 +29,8 @@ publish: deps
 		--remote $(GNO_REMOTE) \
 		--chainid $(GNO_CHAINID) \
 		--home $(GNO_HOME) \
-		--pkgpath `cat pkgpath.txt` \
+		--pkgpath gno.land/$(GNO_PKG_PATH) \
 		--pkgdir "./.tmp/"
 
 integration: deps
-	GNO_HOME=$(GNO_HOME) GNO_WALLET=$(GNO_WALLET) GNO_CHAINID=$(GNO_CHAINID) GNO_REMOTE=$(GNO_REMOTE) ./integrations.sh
+	GNO_HOME=$(GNO_HOME) GNO_WALLET=$(GNO_WALLET) GNO_CHAINID=$(GNO_CHAINID) GNO_REMOTE=$(GNO_REMOTE) GNO_PKG_PATH=$(GNO_PKG_PATH) ./integrations.sh

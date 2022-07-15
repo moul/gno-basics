@@ -1,8 +1,8 @@
-# [gno.land/r/moul_basics_render_v1](https://test2.gno.land/r/moul_basics_render_v1)
+# [r/moul_basics_render_v1](https://test2.gno.land/r/moul_basics_render_v1)
 
 ```console
-foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657"  \
-> --gas-wanted 500000 --pkgpath gno.land/r/moul_basics_render_v1 --func Render --args hello
+foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "test2" --remote  \
+> "test2.gno.land:36657" --gas-wanted 500000 --pkgpath gno.land/r/moul_basics_render_v1 --func Render --args hello
 ("Hello World!" string)
 OK!
 GAS WANTED: 500000
@@ -10,8 +10,8 @@ GAS USED:   72697
 ```
 
 ```console
-foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "dev" --remote "localhost:26657"  \
-> --gas-wanted 500000 --pkgpath gno.land/r/moul_basics_render_v1 --func Render --args foobar
+foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee 1ugnot --broadcast true --chainid "test2" --remote  \
+> "test2.gno.land:36657" --gas-wanted 500000 --pkgpath gno.land/r/moul_basics_render_v1 --func Render --args foobar
 ("404" string)
 OK!
 GAS WANTED: 500000

@@ -3,6 +3,6 @@
 . ../integrations.lib.sh
 
 pre
-call --pkgpath $(cat pkgpath.txt) --func "Render" --args "hello"
-call --pkgpath $(cat pkgpath.txt) --func "Render" --args "foobar"
+call --pkgpath ${GNO_CONTRACT_ENDPOINT} --func "Render" --args "hello"
+call --pkgpath ${GNO_CONTRACT_ENDPOINT} --func "Render" --args "foobar"
 post

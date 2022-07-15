@@ -1,1 +1,1 @@
-gno.land/r/moul_basics_args_v1
+r/moul_basics_args_v1

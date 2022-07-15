@@ -3,6 +3,6 @@
 . ../integrations.lib.sh
 
 pre
-call --pkgpath $(cat pkgpath.txt) --func "Hello" --args "Universe"
-call --pkgpath $(cat pkgpath.txt) --func "Hello" --args "Multiverse"
+call --pkgpath ${GNO_CONTRACT_ENDPOINT} --func "Hello" --args "Universe"
+call --pkgpath ${GNO_CONTRACT_ENDPOINT} --func "Hello" --args "Multiverse"
 post

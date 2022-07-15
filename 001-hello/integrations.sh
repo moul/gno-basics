@@ -3,5 +3,5 @@
 . ../integrations.lib.sh
 
 pre
-call --pkgpath $(cat pkgpath.txt) --func "Hello"
+call --pkgpath ${GNO_CONTRACT_ENDPOINT} --func "Hello"
 post
