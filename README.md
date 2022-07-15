@@ -1,3 +1,3 @@
-# gno-hello [![Gno](https://github.com/moul/gno-hello/actions/workflows/gno.yml/badge.svg)](https://github.com/moul/gno-hello/actions/workflows/gno.yml)
+# gno-basics [![Gno](https://github.com/moul/gno-basics/actions/workflows/gno.yml/badge.svg)](https://github.com/moul/gno-basics/actions/workflows/gno.yml)
 
-Gno contracts examples.
+Gnolang smart contract examples.
