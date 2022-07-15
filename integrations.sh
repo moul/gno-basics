@@ -21,5 +21,7 @@ _call() {
 }
 
 #call 001-hello --pkgpath "gno.land/r/moul_basics_001" --func "Hello"
-call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Universe"
-call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Multiverse"
+#call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Universe"
+#call 002-args --pkgpath "gno.land/r/moul_basics_002" --func "Hello" --args "Multiverse"
+call 003-data --pkgpath "gno.land/r/moul_basics_003" --func "Add" --args "42"
+call 003-data --pkgpath "gno.land/r/moul_basics_003" --func "Add" --args "295"
