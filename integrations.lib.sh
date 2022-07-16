@@ -44,9 +44,9 @@ EOF
 
 call() {
     echo '```console' >> README.md
-    # simulate a console prompt; max 90 columns
+    # simulate a console prompt; max 72 columns
     echo "foo@bar:~\$ gnokey maketx call \"MYWALLET\" --gas-fee \"1ugnot\" --broadcast \"true\" --chainid \"${PUB_CHAINID}\" --remote \"${PUB_REMOTE}\" --gas-wanted \"500000\" $@" \
-        | fold -s -w 88 \
+        | fold -s -w 70 \
         | sed '2,$s/^/> /' \
         | sed '$ ! s/$/ \\/' \
               >> README.md
