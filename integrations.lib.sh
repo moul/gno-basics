@@ -36,7 +36,7 @@ EOF
 ## How to publish locally
 
 \`\`\`sh
-gnokey maketx addpkg "MYWALLET" --deposit "ugnot" --gas-fee "1ugnot" --gas-wanted "5000000" --broadcast true --remote "localhost:26657" --chainid "dev" --pkgpath "'${GNO_CONTRACT_ENDPOINT}'" --pkgdir "."
+gnokey maketx addpkg "MYWALLET" --deposit "1ugnot" --gas-fee "1ugnot" --gas-wanted "5000000" --broadcast "true" --remote "localhost:26657" --chainid "dev" --pkgpath "${GNO_CONTRACT_ENDPOINT}" --pkgdir "."
 \`\`\`
 
 EOF
@@ -44,9 +44,9 @@ EOF
 
 call() {
     echo '```console' >> README.md
-    # simulate a console prompt; max 120 columns
-    echo "foo@bar:~\$ gnokey maketx call \"MYWALLET\" --gas-fee 1ugnot --broadcast true --chainid \"${PUB_CHAINID}\" --remote \"${PUB_REMOTE}\" --gas-wanted 500000 $@" \
-        | fold -s -w 118 \
+    # simulate a console prompt; max 90 columns
+    echo "foo@bar:~\$ gnokey maketx call \"MYWALLET\" --gas-fee \"1ugnot\" --broadcast \"true\" --chainid \"${PUB_CHAINID}\" --remote \"${PUB_REMOTE}\" --gas-wanted \"500000\" $@" \
+        | fold -s -w 88 \
         | sed '2,$s/^/> /' \
         | sed '$ ! s/$/ \\/' \
               >> README.md
