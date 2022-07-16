@@ -1,1 +1,1 @@
-../single.mk
+-include ../single.mk

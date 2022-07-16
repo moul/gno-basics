@@ -3,28 +3,26 @@ GNO_HOME ?= ~/.gno
 GNO_CHAINID ?= dev
 GNO_REMOTE ?= localhost:26657
 GNO_PKG_PATH ?= `cat pkgpath.txt`
+GNO_ROOT ?= `go list -m -mod=mod -f "{{.Dir}}" github.com/gnolang/gno`
 
-all: precompile build test publish integration
+all-default: precompile build test publish integration
 
-deps:
+deps-default:
 	@# done in the parent Makefile
 
-precompile: deps
+precompile-default: deps
 	@rm -rf .tmp/
 	gnodev precompile "./" --verbose
 
-build: deps precompile
+build-default: deps precompile-default
 	@rm -rf .tmp/
 	gnodev build "./"
 
-test: deps
+test-default: deps
 	@rm -rf .tmp/
 	gnodev test "./" --verbose
 
-publish: deps
-	@# create temp dir with just the .gno files
-	rm -rf .tmp/; mkdir -p .tmp/; cp *.gno .tmp/
-	gnokey maketx addpkg "$(GNO_WALLET)" \
+publish_pkg =	gnokey maketx addpkg "$(GNO_WALLET)" \
 		--deposit 100ugnot \
 		--gas-fee 1ugnot \
 		--gas-wanted 5000000 \
@@ -32,11 +30,19 @@ publish: deps
 		--remote $(GNO_REMOTE) \
 		--chainid $(GNO_CHAINID) \
 		--home $(GNO_HOME) \
-		--pkgpath gno.land/$(GNO_PKG_PATH) \
-		--pkgdir "./.tmp/"
+		--pkgpath $(1) \
+		--pkgdir $(2)
 
-integration: deps
+publish-default: deps
+	@# create temp dir with just the .gno files
+	rm -rf .tmp/; mkdir -p .tmp/; cp *.gno .tmp/
+	$(call publish_pkg,gno.land/$(GNO_PKG_PATH),./.tmp/)
+
+integration-default: deps
 	GNO_HOME=$(GNO_HOME) GNO_WALLET=$(GNO_WALLET) GNO_CHAINID=$(GNO_CHAINID) GNO_REMOTE=$(GNO_REMOTE) GNO_PKG_PATH=$(GNO_PKG_PATH) ./integrations.sh
 
-clean:
+clean-default:
 	rm -f $(wildcard *.gno.gen*) $(wildcard .*.gno.gen*)
+
+%: %-default # handles cases where we don't want to override
+	@true
