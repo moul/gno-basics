@@ -23,7 +23,8 @@ ok      ./. 	2.96s
 
 ## How to publish locally
 
-```sh
-gnokey maketx addpkg "MYWALLET" --deposit "ugnot" --gas-fee "1ugnot" --gas-wanted "5000000" --broadcast true --remote "localhost:26657" --chainid "dev" --pkgpath "'gno.land/r/moul_basics_hello_v1'" --pkgdir "."
+```console
+foo@bar:~$ gnokey maketx addpkg "MYWALLET" --gas-fee "1ugnot" --gas-wanted "5000000" --pkgdir "." \
+> --broadcast true --remote "localhost:26657" --chainid "dev" --pkgpath "'gno.land/r/moul_basics_hello_v1'"
 ```
 
