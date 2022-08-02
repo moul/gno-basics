@@ -1,6 +1,6 @@
 module github.com/moul/gno-hello-contract
 
-go 1.18
+go 1.19
 
 require (
 	github.com/campoy/embedmd v1.0.0
