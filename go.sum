@@ -31,6 +31,8 @@ github.com/cespare/xxhash/v2 v2.1.2 h1:YRXhKfTDauu4ajMg1TPgFO5jnlC2HCbmLXMcTG5cb
 github.com/cespare/xxhash/v2 v2.1.2/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
+github.com/cockroachdb/apd v1.1.0 h1:3LFP3629v+1aKXU5Q37mxmRxX/pIu1nijXydLShEq5I=
+github.com/cockroachdb/apd v1.1.0/go.mod h1:8Sl8LxpKi29FqWXR16WEFZRNSz3SoPzUzeMeY4+DwBQ=
 github.com/coreos/etcd v3.3.10+incompatible/go.mod h1:uF7uidLiAD3TWHmW31ZFd/JWoc32PjwdhPthX9715RE=
 github.com/coreos/go-etcd v2.0.0+incompatible/go.mod h1:Jez6KQU2B/sWsbdaef3ED8NzMklzPG4d5KIOhIy30Tk=
 github.com/coreos/go-semver v0.2.0/go.mod h1:nnelYz7RCh+5ahJtPPxZlU+153eP4D4r3EedlOD2RNk=
@@ -67,6 +69,8 @@ github.com/gnolang/gno v0.0.0-20220713073404-8543688cdabe h1:1w8b4cMyJzC2nGYTj6c
 github.com/gnolang/gno v0.0.0-20220713073404-8543688cdabe/go.mod h1:Sk0l6+ZwnnBztD5lNpGeczeMmgh3qKaYJfLhrWdnc9M=
 github.com/gnolang/gno v0.0.0-20220722201524-7bcad8d9a57b h1:m6q2+y24vGJmPX8RniH0Guna2QZPQZ0uqsSn744KI7U=
 github.com/gnolang/gno v0.0.0-20220722201524-7bcad8d9a57b/go.mod h1:Sk0l6+ZwnnBztD5lNpGeczeMmgh3qKaYJfLhrWdnc9M=
+github.com/gnolang/gno v0.0.0-20220912194420-3214578d2e8a h1:RZjz1mq3TXwqQNAoBFlNMtC9ZOWeGnDs3W8ZAltlNkU=
+github.com/gnolang/gno v0.0.0-20220912194420-3214578d2e8a/go.mod h1:WAlrqDgzNvWvbRPU3dXYZhKzNmlbDMkEn7fisTMRy54=
 github.com/gnolang/overflow v0.0.0-20170615021017-4d914c927216 h1:GKvsK3oLWG9B1GL7WP/VqwM6C92j5tIvB844oggL9Lk=
 github.com/gnolang/overflow v0.0.0-20170615021017-4d914c927216/go.mod h1:xJhtEL7ahjM1WJipt89gel8tHzfIl/LyMY+lCYh38d8=
 github.com/gogo/protobuf v1.3.2 h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=
