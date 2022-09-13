@@ -51,4 +51,6 @@ func Test(t *testing.T) {
 			t.Fatalf("expected %d, got %d.", expected, got)
 		}
 	}
+
+	// TODO: test the vault.
 }
