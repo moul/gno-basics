@@ -4,13 +4,14 @@ go 1.19
 
 require (
 	github.com/campoy/embedmd v1.0.0
-	github.com/gnolang/gno v0.0.0-20220722201524-7bcad8d9a57b
+	github.com/gnolang/gno v0.0.0-20220912194420-3214578d2e8a
 )
 
 require (
 	github.com/btcsuite/btcd/btcutil v1.1.1 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/cockroachdb/apd v1.1.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgraph-io/badger/v3 v3.2103.2 // indirect
 	github.com/dgraph-io/ristretto v0.1.0 // indirect
