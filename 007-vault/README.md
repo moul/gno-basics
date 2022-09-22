@@ -15,10 +15,6 @@ foo@bar:~$ gnokey maketx call "MYWALLET" --gas-fee "1ugnot"  \
 > --broadcast "true" --chainid "test2" --remote "test2.gno.land:36657"  \
 > --gas-wanted "500000" --pkgpath gno.land/r/moul_basics_vault_v1  \
 > --func MyBalance
-(100000000 uint64)
-OK!
-GAS WANTED: 500000
-GAS USED:   296160
 ```
 
 ## `gnodev test`
@@ -27,7 +23,7 @@ GAS USED:   296160
 foo@bar:~$ gnodev test . --verbose
 === RUN   Test
 --- PASS: Test (0.00s)
-ok      ./. 	3.14s
+ok      ./. 	2.97s
 ```
 
 ## How to publish locally
