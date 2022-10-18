@@ -29,6 +29,7 @@ jobs:
           - 005-import
           - 006-grc20
           - 007-vault
+          - 900-wikipedia-coin
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -56,6 +57,7 @@ jobs:
           #- 005-import
           #- 006-grc20
           #- 007-vault
+          - 900-wikipedia-coin
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
