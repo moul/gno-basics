@@ -21,7 +21,14 @@ jobs:
       fail-fast: false
       matrix:
         goversion: ["1.18.x"]
-        realm: ["001-hello"]
+        realm:
+          - 001-hello
+          - 002-args
+          - 003-data
+          - 004-render
+          - 005-import
+          - 006-grc20
+          - 007-vault
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -40,7 +47,14 @@ jobs:
       fail-fast: false
       matrix:
         goversion: ["1.18.x"]
-        realm: ["001-hello"]
+        realm:
+          - 001-hello
+          - 002-args
+          - 003-data
+          - 004-render
+          - 005-import
+          - 006-grc20
+          - 007-vault
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
