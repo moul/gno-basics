@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/campoy/embedmd v1.0.0
-	github.com/gnolang/gno v0.0.0-20221015185117-a805afc299f1
+	github.com/gnolang/gno v0.0.0-20221019142133-9cc1bdc81ca7
 )
 
 require (
