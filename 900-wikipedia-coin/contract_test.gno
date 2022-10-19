@@ -1,4 +1,4 @@
-package demo
+package coin
 
 import (
 	"std"
@@ -9,4 +9,5 @@ import (
 )
 
 func Test(t *testing.T) {
+	BalanceOf("test")
 }
