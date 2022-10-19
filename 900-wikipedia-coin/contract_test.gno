@@ -9,5 +9,14 @@ import (
 )
 
 func Test(t *testing.T) {
-	BalanceOf("test")
+	test2 := testutils.TestAddress("test2")
+
+	mint := uint(1000)
+	Mint(test2, mint)
+
+	std.TestSetOrigCaller(test2) // dropping privileges
+	bal := BalanceOf(test2)
+	if bal != mint {
+		t.Errorf("expected %d, got %d", mint, bal)
+	}
 }

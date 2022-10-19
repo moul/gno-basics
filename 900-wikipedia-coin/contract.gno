@@ -9,7 +9,7 @@ import (
 	"gno.land/p/ufmt"
 )
 
-var balances avl.Tree // addr -> balance
+var balances = avl.NewMutTree() // addr -> balance
 var minter std.Address
 
 // Constructor code is only run when the contract is created
@@ -21,26 +21,26 @@ func Mint(receiver std.Address, amount uint) {
 	if std.GetOrigCaller() != minter {
 		panic("restricted")
 	}
-	curBal := BalanceOf(receiver)
-	newBal := curBal + amount
-	balances.Set(receiver.String(), newBal)
+	curBalance := BalanceOf(receiver)
+	newBalance := curBalance + amount
+	balances.Set(receiver.String(), newBalance)
 }
 
 func Send(receiver std.Address, amount uint) {
 	sender := std.GetOrigCaller()
-	senderBal := BalanceOf(sender)
-	if amount > senderBal {
-		panic(ufmt.Sprintf("insufficient balance: %d", senderBal))
+	senderBalance := BalanceOf(sender)
+	if amount > senderBalance {
+		panic(ufmt.Sprintf("insufficient balance: %d", senderBalance))
 	}
-	receiverBal := BalanceOf(receiver)
-	balances.Set(sender.String(), senderBal-amount)
-	balances.Set(receiver.String(), receiverBal+amount)
+	receiverBalance := BalanceOf(receiver)
+	balances.Set(sender.String(), senderBalance-amount)
+	balances.Set(receiver.String(), receiverBalance+amount)
 }
 
 func BalanceOf(addr std.Address) uint {
-	_, bal, found := balances.Get(addr.String())
+	balance, found := balances.Get(addr.String())
 	if !found {
 		return 0
 	}
-	return bal.(uint)
+	return balance.(uint)
 }
