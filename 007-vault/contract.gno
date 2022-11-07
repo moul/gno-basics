@@ -3,8 +3,8 @@ package demo
 import (
 	"std"
 
-	"gno.land/p/grc/exts/vault"
-	"gno.land/p/grc/grc20"
+	"gno.land/p/demo/grc/exts/vault"
+	"gno.land/p/demo/grc/grc20"
 )
 
 // FooToken and FooVault are exported. Other contracts can interact with them.

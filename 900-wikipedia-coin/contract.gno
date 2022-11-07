@@ -5,8 +5,8 @@ import (
 	"std"
 	"strconv"
 
-	"gno.land/p/avl"
-	"gno.land/p/ufmt"
+	"gno.land/p/demo/avl"
+	"gno.land/p/demo/ufmt"
 )
 
 var balances = avl.NewMutTree() // addr -> balance

@@ -1,8 +1,8 @@
 package demo
 
 import (
-	"gno.land/p/avl"
-	"gno.land/p/dom"
+	"gno.land/p/demo/avl"
+	"gno.land/p/demo/dom"
 )
 
 func Render(path string) string {
