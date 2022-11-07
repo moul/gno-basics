@@ -1,1 +1,1 @@
-r/moul_basics_data_v1
+r/moul/basics/data/v1

@@ -7,4 +7,4 @@ build:
 # install gno.land/p/dom if not yet existing
 publish: publish-dom publish-default
 publish-dom:
-	$(call publish_pkg,gno.land/p/dom,"${GNO_ROOT}/examples/gno.land/p/dom")
+	$(call publish_pkg,gno.land/p/demo/dom,"${GNO_ROOT}/examples/gno.land/p/demo/dom")

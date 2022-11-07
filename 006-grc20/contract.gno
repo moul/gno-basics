@@ -3,7 +3,7 @@ package demo
 import (
 	"std"
 
-	"gno.land/p/grc/grc20"
+	"gno.land/p/demo/grc/grc20"
 )
 
 // FooToken is exported. Other contracts can interact with it.

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"gno.land/p/testutils"
+	"gno.land/p/demo/testutils"
 )
 
 func Test(t *testing.T) {
