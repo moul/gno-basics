@@ -1,1 +1,1 @@
-r/moul_basics_vault_v1
+r/moul/basics/vault/v1

@@ -1,1 +1,1 @@
-r/moul_wikipedia_coin_v1
+r/moul/basics/wikipedia_coin/v1

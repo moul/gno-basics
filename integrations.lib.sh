@@ -5,9 +5,9 @@ GNO_HOME=${GNO_HOME:-~/.gno}
 GNO_CHAINID=${GNO_CHAINID:-dev}
 GNO_REMOTE=${GNO_REMOTE:-localhost:26657}
 GNO_PKG_PATH=${GNO_PKG_PATH:-`cat pkgpath.txt`}
-PUB_DOMAIN=${PUB_DOMAIN:-test2.gno.land}
-PUB_REMOTE=${PUB_REMOTE:-test2.gno.land:36657}
-PUB_CHAINID=${PUB_CHAINID:-test2}
+PUB_DOMAIN=${PUB_DOMAIN:-test3.gno.land}
+PUB_REMOTE=${PUB_REMOTE:-test3.gno.land:36657}
+PUB_CHAINID=${PUB_CHAINID:-test3}
 GNO_CONTRACT_ENDPOINT=gno.land/${GNO_PKG_PATH}
 
 pre() {
