@@ -3,7 +3,7 @@ module moul.io/gno-basics
 go 1.19
 
 require (
-	github.com/campoy/embedmd v1.0.0
+	github.com/campoy/embedmd/v2 v2.0.0
 	github.com/gnolang/gno v0.0.0-20230728005028-4ce3b2927f2c
 )
 
