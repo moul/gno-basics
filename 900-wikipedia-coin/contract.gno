@@ -39,8 +39,8 @@ func Send(cur realm, receiver address, amount uint) {
 }
 
 func BalanceOf(addr address) uint {
-	balance, found := balances.Get(addr.String())
-	if !found {
+	balance := balances.Get(addr.String())
+	if balance == nil {
 		return 0
 	}
 	return balance.(uint)
