@@ -1,4 +1,4 @@
-package demo
+package args
 
 import "testing"
 

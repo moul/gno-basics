@@ -1,4 +1,4 @@
-package demo
+package hello
 
 import "testing"
 

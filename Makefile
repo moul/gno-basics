@@ -1,17 +1,27 @@
-EXAMPLES ?= $(dir $(wildcard [0-9][0-9][0-9]-*/pkgpath.txt))
+.PHONY: all test lint fmt dev install_deps
 
-all: precompile build test publish integration
+all: fmt test lint
 
-deps:
-	rm -f $(wildcard */*.gen.go)
-	go mod tidy
-	go install github.com/gnolang/gno/cmd/gnokey
-	go install github.com/gnolang/gno/cmd/gnodev
+# Run all tests
+test:
+	gno test ./... -v
 
-precompile build test publish integration clean: deps
-	@for example in $(EXAMPLES); do \
-		( set -e; \
-			echo "+ cd $$example && make $@"; \
-			cd "$$example" && make --no-print-directory $@ \
-		); \
-	done
+# Run linter
+lint:
+	gno lint ./...
+
+# Format the code
+fmt:
+	gno fmt -w ./...
+
+# Local chain with hot reload, serving every example
+dev:
+	gnodev
+
+install_deps:
+	# --from-source is required: the installer's prebuilt-binary mode resolves
+	# "latest" against GitHub releases, and gnolang/gno's v* tags have no
+	# release objects. See gnolang/gno#6195.
+	curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/gnolang/gno/master/misc/install.sh | sh -s -- --from-source
+	@echo '>> binaries are in $$HOME/.gno/bin — add it to your PATH:'
+	@echo '   export PATH="$$HOME/.gno/bin:$$PATH"'

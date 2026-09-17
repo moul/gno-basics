@@ -1,4 +1,4 @@
-package demo
+package data
 
 import "testing"
 
