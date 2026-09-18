@@ -1,4 +1,4 @@
-package demo
+package render
 
 import "testing"
 
@@ -13,6 +13,6 @@ func shouldEqual(t *testing.T, path string, expected string) {
 
 	got := Render(path)
 	if got != expected {
-		t.Fatalf("expected %d, got %d.", expected, got)
+		t.Fatalf("expected %q, got %q.", expected, got)
 	}
 }

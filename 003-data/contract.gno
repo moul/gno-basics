@@ -1,4 +1,4 @@
-package demo
+package data
 
 var total int
 

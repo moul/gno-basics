@@ -1,4 +1,4 @@
-package demo
+package render
 
 import "strings"
 
@@ -19,8 +19,8 @@ func Render(path string) string {
 		name = strings.Title(name)          // capitalize first letter
 		return greetings(name)
 	case path == "":
-		out := "- [hello](/r/moul_basics_004:hello)\n"
-		out += "- [greetings/Manfred](/r/moul_basics_004:greetings/Manfred)\n"
+		out := "- [hello](/r/moul/basics/render/v1:hello)\n"
+		out += "- [greetings/Manfred](/r/moul/basics/render/v1:greetings/Manfred)\n"
 		return out
 	}
 	return "404"

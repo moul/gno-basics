@@ -1,24 +1,25 @@
 // based on Wikipedia's Solidity example: https://en.wikipedia.org/wiki/Solidity
-package coin
+package wikipedia_coin
 
 import (
-	"std"
-	"strconv"
+	"chain/runtime/unsafe"
 
-	"gno.land/p/demo/avl"
-	"gno.land/p/demo/ufmt"
+	"gno.land/p/nt/avl/v0"
+	"gno.land/p/nt/ufmt/v0"
 )
 
-var balances = avl.NewMutTree() // addr -> balance
-var minter std.Address
+var (
+	balances = avl.NewTree() // addr -> balance
+	minter   address
+)
 
 // Constructor code is only run when the contract is created
 func init() {
-	minter = std.GetOrigCaller()
+	minter = unsafe.OriginCaller()
 }
 
-func Mint(receiver std.Address, amount uint) {
-	if std.GetOrigCaller() != minter {
+func Mint(cur realm, receiver address, amount uint) {
+	if unsafe.OriginCaller() != minter {
 		panic("restricted")
 	}
 	curBalance := BalanceOf(receiver)
@@ -26,8 +27,8 @@ func Mint(receiver std.Address, amount uint) {
 	balances.Set(receiver.String(), newBalance)
 }
 
-func Send(receiver std.Address, amount uint) {
-	sender := std.GetOrigCaller()
+func Send(cur realm, receiver address, amount uint) {
+	sender := unsafe.OriginCaller()
 	senderBalance := BalanceOf(sender)
 	if amount > senderBalance {
 		panic(ufmt.Sprintf("insufficient balance: %d", senderBalance))
@@ -37,9 +38,9 @@ func Send(receiver std.Address, amount uint) {
 	balances.Set(receiver.String(), receiverBalance+amount)
 }
 
-func BalanceOf(addr std.Address) uint {
-	balance, found := balances.Get(addr.String())
-	if !found {
+func BalanceOf(addr address) uint {
+	balance := balances.Get(addr.String())
+	if balance == nil {
 		return 0
 	}
 	return balance.(uint)

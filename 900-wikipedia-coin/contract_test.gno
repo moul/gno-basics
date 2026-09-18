@@ -1,20 +1,18 @@
-package coin
+package wikipedia_coin
 
 import (
-	"std"
-	"strings"
 	"testing"
 
-	"gno.land/p/demo/testutils"
+	"gno.land/p/nt/testutils/v0"
 )
 
-func Test(t *testing.T) {
+func TestMintAndBalance(cur realm, t *testing.T) {
 	test2 := testutils.TestAddress("test2")
 
 	mint := uint(1000)
-	Mint(test2, mint)
+	Mint(cross(cur), test2, mint)
 
-	std.TestSetOrigCaller(test2) // dropping privileges
+	testing.SetRealm(testing.NewUserRealm(test2)) // dropping privileges
 	bal := BalanceOf(test2)
 	if bal != mint {
 		t.Errorf("expected %d, got %d", mint, bal)

@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Install Gno
+        run: |
+          make install_deps
+          echo "$HOME/.gno/bin" >> "$GITHUB_PATH"
+
+      - name: Test
+        run: make test
+
+      - name: Lint
+        run: make lint
